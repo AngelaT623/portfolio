@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Route, Link } from 'react-router-dom';
+import AboutMe from './AboutMe';
+import Portfolio from './Portfolio';
+import ContactMe from './ContactMe';
+import Home from './Home';
 
-function App() {
+class App extends Component {
+  render() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+		<div className='App'>
+			<div className='sidebar'>
+				<img src={require('./images/Me.png')} alt='pic' />
+				<h2>Angela Taylor</h2>
+				<nav>
+					<Link to='/'>
+						<p>Home</p>
+					</Link>
+					<Link to='/about-me'>
+						<p>About Me</p>
+					</Link>
+					<Link to='/contact-me'>
+						<p>Contact</p>
+					</Link>
+				</nav>
+			</div>
+
+			<main>
+				<Route path='/' exact component={Home} />
+				<Route path='/portfolio' component={Portfolio} />
+				<Route path='/about-me' component={AboutMe} />
+				<Route path='/contact-me' component={ContactMe} />
+			</main>
+		</div>
+	);
+  }
 }
 
 export default App;
