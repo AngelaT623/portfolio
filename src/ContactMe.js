@@ -4,7 +4,7 @@ class ContactMe extends Component {
 	render() {
 		return (
 			<div className='contact'>
-				<h3>Links for my stuff</h3>
+				<h3>Check out my links to my sites:</h3>
 				<h4>
 					<a
 						href='https://docs.google.com/document/d/1bWnXWe5fD3TDeHWzGDSPOvsPALYYp1J-Jh1VhsRXtxw/edit#heading=h.ca0awj8022e2'
